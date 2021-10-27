@@ -34,17 +34,14 @@ router.put('/api/workouts/:id', (req, res) => {
         });
 });
 // create workout
-router.post('/api/workouts', (req, res) => {
-    Workout.create({})
-        .then((data) => {
-            res.json(data);
-        })
-        .catch((err) => {
-            res.status(400).json(err);
-        })
-        .catch((err) => {
-            res.status(400).json(err);
-        });
+router.post('/api/workouts', ({ body }, res) => {
+    Workout.create(body)
+    .then(data => {
+      res.json(data);
+    })
+    .catch(err => {
+      res.status(400).json(err);
+    });
 });
 // get workouts range 
 router.get('/api/workouts/range', (req, res) => {
