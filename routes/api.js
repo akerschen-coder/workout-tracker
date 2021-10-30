@@ -61,7 +61,4 @@ router.get('/api/workouts/range', (req, res) => {
         });
 });
 
-
-
-// cry myself to sleep 
 module.exports = router;
